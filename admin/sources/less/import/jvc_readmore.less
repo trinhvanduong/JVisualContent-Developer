@@ -1,0 +1,30 @@
+.jvc_system-readmore{
+  cursor: move;
+  &[data-model-id][data-element_type],
+  [data-model-id][data-aria-control] {
+    &:not([data-element_type=tz_row]):not([data-element_type=tz_column]) {
+      padding: 0;
+      border: none;
+      background: @column-background;
+      &.ui-sortable-helper{
+        background: @column-background;
+      }
+    }
+  }
+  .jvc_system-readmore-heading{
+    clear: both;
+    height: 25px;
+    display: block;
+    line-height: 0;
+    margin: 25px 0px 0px;
+    border-top: 1px solid rgb(202, 202, 202);
+    span{
+      background: @readmore-text-color;
+      padding: 7px 10px;
+      border: 1px solid rgb(202, 202, 202);
+    }
+  }
+  &.content_element.ui-sortable-helper > .element_wrapper{
+    display: block;
+  }
+}

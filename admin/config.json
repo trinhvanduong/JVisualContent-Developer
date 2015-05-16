@@ -1,0 +1,44 @@
+{
+  "banner":[ "/*------------------------------------------------------------------------",
+              "# JVisualContent Extension",
+              "# ------------------------------------------------------------------------",
+              "# author    DuongTVTemPlaza",
+              "# copyright Copyright (C) 2012 templaza.com. All Rights Reserved.",
+              "# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL",
+              "# Website: http://www.templaza.com",
+              "# Technical Support:  Forum - http://templaza.com/Forum",
+              "-------------------------------------------------------------------------*/"
+  ],
+  "bootstrap": {
+    "name"      : "jvisualcontent-bootstrap",
+    "banner"    : [ "/*------------------------------------------------------------------------",
+                    "# JVisualContent Extension",
+                    "# ------------------------------------------------------------------------",
+                    "# author    DuongTVTemPlaza",
+                    "# copyright Copyright (C) 2012 templaza.com. All Rights Reserved.",
+                    "# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL",
+                    "# Website: http://www.templaza.com",
+                    "# Technical Support:  Forum - http://templaza.com/Forum",
+                    "# In this product, there are some features developed based on Boostrap",
+                    "# Source: http://getbootstrap.com/",
+                    "-------------------------------------------------------------------------*/"
+    ],
+    "src_js_path"  : "sources/js/libraries/jvisualcontent_bootstrap-3.3.4/"
+  },
+  "fontawesome": {
+    "name"      : "font-awesome",
+    "banner"    : [ "/*------------------------------------------------------------------------",
+                    "# JVisualContent Extension",
+                    "# ------------------------------------------------------------------------",
+                    "# author    DuongTVTemPlaza",
+                    "# copyright Copyright (C) 2012 templaza.com. All Rights Reserved.",
+                    "# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL",
+                    "# Website: http://www.templaza.com",
+                    "# Technical Support:  Forum - http://templaza.com/Forum",
+                    "# In this product, there are some features developed based on Font Awesome",
+                    "# Source: http://fortawesome.github.io/Font-Awesome/",
+                    "-------------------------------------------------------------------------*/"
+    ],
+    "src_path"  : "sources/less/libraries/font-awesome-4.3.0/"
+  }
+}

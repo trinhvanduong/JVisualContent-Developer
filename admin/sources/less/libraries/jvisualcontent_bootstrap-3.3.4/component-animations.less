@@ -1,0 +1,39 @@
+//
+// Component animations
+// --------------------------------------------------
+
+// Heads up!
+//
+// We don't use the `.opacity()` mixin here since it causes a bug with text
+// fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+
+@{main_prefix} {
+  .@{prefix}fade {
+    opacity: 0;
+    .transition(opacity .15s linear);
+    &.@{prefix}in {
+      opacity: 1;
+    }
+  }
+}
+
+.@{prefix}collapse {
+  @{main_prefix} &{
+    display: none;
+
+    &.@{prefix}in      { display: block; }
+  }
+  @{main_prefix} tr&.@{prefix}in    { display: table-row; }
+  @{main_prefix} tbody&.@{prefix}in { display: table-row-group; }
+}
+
+@{main_prefix} {
+  .@{prefix}collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    .transition-property(~"height, visibility");
+    .transition-duration(.35s);
+    .transition-timing-function(ease);
+  }
+}

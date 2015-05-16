@@ -1,0 +1,62 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.jvc_bootstrap3 .jvc_clearfix {
+  .clearfix();
+}
+@{main_prefix} {
+  .@{prefix}center-block {
+    .center-block();
+  }
+  .@{prefix}pull-right {
+    .pull-right()
+  }
+  .@{prefix}pull-left {
+    .pull-left();
+  }
+}
+.pull-right() {
+  float: right !important;
+}
+.pull-left() {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+@{main_prefix} {
+  // Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+  .@{prefix}hide {
+    display: none !important;
+  }
+  .@{prefix}show {
+    display: block !important;
+  }
+  .@{prefix}invisible {
+    visibility: hidden;
+  }
+  .@{prefix}text-hide {
+    .text-hide();
+  }
+
+  // Hide from screenreaders and browsers
+  //
+  // Credit: HTML5 Boilerplate
+
+  .@{prefix}hidden {
+    display: none !important;
+  }
+
+  // For Affix plugin
+  // -------------------------
+
+  .@{prefix}affix {
+    position: fixed;
+  }
+}

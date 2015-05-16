@@ -1,0 +1,10 @@
+// Typography
+
+.text-emphasis-variant(@color) {
+  @{main_prefix} & {
+    color: @color;
+  }
+  @{main_prefix} a&:hover {
+    color: darken(@color, 10%);
+  }
+}

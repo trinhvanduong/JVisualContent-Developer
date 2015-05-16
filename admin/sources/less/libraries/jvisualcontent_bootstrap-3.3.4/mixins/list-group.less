@@ -1,0 +1,29 @@
+// List Groups
+
+.list-group-item-variant(@state; @background; @color) {
+  .@{prefix}list-group-item-@{state} {
+    color: @color;
+    background-color: @background;
+
+    a& {
+      color: @color;
+
+      .@{prefix}list-group-item-heading {
+        color: inherit;
+      }
+
+      &:hover,
+      &:focus {
+        color: @color;
+        background-color: darken(@background, 5%);
+      }
+      &.@{prefix}active,
+      &.@{prefix}active:hover,
+      &.@{prefix}active:focus {
+        color: #fff;
+        background-color: @color;
+        border-color: @color;
+      }
+    }
+  }
+}

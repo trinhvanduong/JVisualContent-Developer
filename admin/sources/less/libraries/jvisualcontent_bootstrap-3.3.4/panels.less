@@ -1,0 +1,263 @@
+//
+// Panels
+// --------------------------------------------------
+
+@{main_prefix} {
+  // Base class
+  .@{prefix}panel {
+    margin-bottom: @line-height-computed;
+    background-color: @panel-bg;
+    border: 1px solid transparent;
+    border-radius: @panel-border-radius;
+    .box-shadow(0 1px 1px rgba(0, 0, 0, .05));
+  }
+
+  // Panel contents
+  .@{prefix}panel-body {
+    padding: @panel-body-padding;
+    &:extend(.jvc_bootstrap3 .jvc_clearfix all);
+  }
+
+  // Optional heading
+  .@{prefix}panel-heading {
+    padding: @panel-heading-padding;
+    border-bottom: 1px solid transparent;
+    .border-top-radius((@panel-border-radius - 1));
+
+    > .@{prefix}dropdown .@{prefix}dropdown-toggle {
+      color: inherit;
+    }
+  }
+
+  // Within heading, strip any `h*` tag of its default margins for spacing.
+  .@{prefix}panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ceil((@font-size-base * 1.125));
+    color: inherit;
+
+    > a,
+    > small,
+    > .@{prefix}small,
+    > small > a,
+    > .@{prefix}small > a {
+      color: inherit;
+    }
+  }
+
+  // Optional footer (stays gray in every modifier class)
+  .@{prefix}panel-footer {
+    padding: @panel-footer-padding;
+    background-color: @panel-footer-bg;
+    border-top: 1px solid @panel-inner-border;
+    .border-bottom-radius((@panel-border-radius - 1));
+  }
+
+  // List groups in panels
+  //
+  // By default, space out list group content from panel headings to account for
+  // any kind of custom content between the two.
+
+  .@{prefix}panel {
+    > .@{prefix}list-group,
+    > .@{prefix}panel-collapse > .@{prefix}list-group {
+      margin-bottom: 0;
+
+      .@{prefix}list-group-item {
+        border-width: 1px 0;
+        border-radius: 0;
+      }
+
+      // Add border top radius for first one
+      &:first-child {
+        .@{prefix}list-group-item:first-child {
+          border-top: 0;
+          .border-top-radius((@panel-border-radius - 1));
+        }
+      }
+      // Add border bottom radius for last one
+      &:last-child {
+        .@{prefix}list-group-item:last-child {
+          border-bottom: 0;
+          .border-bottom-radius((@panel-border-radius - 1));
+        }
+      }
+    }
+  }
+  // Collapse space between when there's no additional content.
+  .@{prefix}panel-heading + .@{prefix}list-group {
+    .@{prefix}list-group-item:first-child {
+      border-top-width: 0;
+    }
+  }
+  .@{prefix}list-group + .@{prefix}panel-footer {
+    border-top-width: 0;
+  }
+
+  // Tables in panels
+  //
+  // Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+  // watch it go full width.
+
+  .@{prefix}panel {
+    > .@{prefix}table,
+    > .@{prefix}table-responsive > .@{prefix}table,
+    > .@{prefix}panel-collapse > .@{prefix}table {
+      margin-bottom: 0;
+
+      caption {
+        padding-left: @panel-body-padding;
+        padding-right: @panel-body-padding;
+      }
+    }
+    // Add border top radius for first one
+    > .@{prefix}table:first-child,
+    > .@{prefix}table-responsive:first-child > .@{prefix}table:first-child {
+      .border-top-radius((@panel-border-radius - 1));
+
+      > thead:first-child,
+      > tbody:first-child {
+        > tr:first-child {
+          border-top-left-radius: (@panel-border-radius - 1);
+          border-top-right-radius: (@panel-border-radius - 1);
+
+          td:first-child,
+          th:first-child {
+            border-top-left-radius: (@panel-border-radius - 1);
+          }
+          td:last-child,
+          th:last-child {
+            border-top-right-radius: (@panel-border-radius - 1);
+          }
+        }
+      }
+    }
+    // Add border bottom radius for last one
+    > .@{prefix}table:last-child,
+    > .@{prefix}table-responsive:last-child > .@{prefix}table:last-child {
+      .border-bottom-radius((@panel-border-radius - 1));
+
+      > tbody:last-child,
+      > tfoot:last-child {
+        > tr:last-child {
+          border-bottom-left-radius: (@panel-border-radius - 1);
+          border-bottom-right-radius: (@panel-border-radius - 1);
+
+          td:first-child,
+          th:first-child {
+            border-bottom-left-radius: (@panel-border-radius - 1);
+          }
+          td:last-child,
+          th:last-child {
+            border-bottom-right-radius: (@panel-border-radius - 1);
+          }
+        }
+      }
+    }
+    > .@{prefix}panel-body + .@{prefix}table,
+    > .@{prefix}panel-body + .@{prefix}table-responsive,
+    > .@{prefix}table + .@{prefix}panel-body,
+    > .@{prefix}table-responsive + .@{prefix}panel-body {
+      border-top: 1px solid @table-border-color;
+    }
+    > .@{prefix}table > tbody:first-child > tr:first-child th,
+    > .@{prefix}table > tbody:first-child > tr:first-child td {
+      border-top: 0;
+    }
+    > .@{prefix}table-bordered,
+    > .@{prefix}table-responsive > .@{prefix}table-bordered {
+      border: 0;
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+      > thead,
+      > tbody {
+        > tr:first-child {
+          > td,
+          > th {
+            border-bottom: 0;
+          }
+        }
+      }
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > td,
+          > th {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    > .@{prefix}table-responsive {
+      border: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // Collapsable panels (aka, accordion)
+  //
+  // Wrap a series of panels in `.panel-group` to turn them into an accordion with
+  // the help of our collapse JavaScript plugin.
+
+  .@{prefix}panel-group {
+    margin-bottom: @line-height-computed;
+
+    // Tighten up margin so it's only between panels
+    .@{prefix}panel {
+      margin-bottom: 0;
+      border-radius: @panel-border-radius;
+
+      + .@{prefix}panel {
+        margin-top: 5px;
+      }
+    }
+
+    .@{prefix}panel-heading {
+      border-bottom: 0;
+
+      + .@{prefix}panel-collapse > .@{prefix}panel-body,
+      + .@{prefix}panel-collapse > .@{prefix}list-group {
+        border-top: 1px solid @panel-inner-border;
+      }
+    }
+
+    .@{prefix}panel-footer {
+      border-top: 0;
+      + .@{prefix}panel-collapse .@{prefix}panel-body {
+        border-bottom: 1px solid @panel-inner-border;
+      }
+    }
+  }
+
+  // Contextual variations
+  .@{prefix}panel-default {
+    .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border);
+  }
+  .@{prefix}panel-primary {
+    .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
+  }
+  .@{prefix}panel-success {
+    .panel-variant(@panel-success-border; @panel-success-text; @panel-success-heading-bg; @panel-success-border);
+  }
+  .@{prefix}panel-info {
+    .panel-variant(@panel-info-border; @panel-info-text; @panel-info-heading-bg; @panel-info-border);
+  }
+  .@{prefix}panel-warning {
+    .panel-variant(@panel-warning-border; @panel-warning-text; @panel-warning-heading-bg; @panel-warning-border);
+  }
+  .@{prefix}panel-danger {
+    .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border);
+  }
+}

@@ -1,0 +1,63 @@
+@{main_prefix} {
+  .@{prefix}media {
+    // Proper spacing between instances of .media
+    margin-top: 15px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .@{prefix}media,
+  .@{prefix}media-body {
+    zoom: 1;
+    overflow: hidden;
+  }
+
+  .@{prefix}media-body {
+    width: 10000px;
+  }
+
+  .@{prefix}media-object {
+    display: block;
+  }
+
+  .@{prefix}media-right,
+  .@{prefix}media > .@{prefix}pull-right {
+    padding-left: 10px;
+  }
+
+  .@{prefix}media-left,
+  .@{prefix}media > .@{prefix}pull-left {
+    padding-right: 10px;
+  }
+
+  .@{prefix}media-left,
+  .@{prefix}media-right,
+  .@{prefix}media-body {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .@{prefix}media-middle {
+    vertical-align: middle;
+  }
+
+  .@{prefix}media-bottom {
+    vertical-align: bottom;
+  }
+
+  // Reset margins on headings for tighter default spacing
+  .@{prefix}media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  // Media list variation
+  //
+  // Undo default ul/ol styles
+  .@{prefix}media-list {
+    padding-left: 0;
+    list-style: none;
+  }
+}
